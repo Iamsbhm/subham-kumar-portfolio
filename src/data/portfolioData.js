@@ -313,7 +313,7 @@ export const portfolioData = {
       category: "SaaS & Enterprise",
       tagline: "Achieved 35% faster deal management and a 30% usability boost through Auto Layout Figma systems.",
       summary: "End-to-end evaluation, user research, and comprehensive interface modernization for a high-growth B2B CRM, replacing clunky tables with kanban workflows.",
-      coverImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1600&auto=format&fit=crop",
+      coverImage: "/projects/flowcrm.png",
       stats: [
         { label: "Task Speed", value: "+35%" },
         { label: "Usability Score", value: "+30%" },

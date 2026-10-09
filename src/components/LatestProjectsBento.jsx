@@ -378,59 +378,43 @@ export default function LatestProjectsBento({ onSelectProject }) {
               </div>
             </motion.div>
 
-            {/* CARD 7: IMPRESSIONS & GROWTH */}
+            {/* CARD 7: FLOWCRM (REPLACED FROM IMPRESSIONS & GROWTH) */}
             <motion.div
               whileHover={{ y: -3 }}
               transition={{ duration: 0.25 }}
-              onClick={() => onSelectProject && onSelectProject(projects[3] || projects[0])}
-              className="relative cursor-pointer bg-[#fcfaf6] rounded-[26px] p-6 sm:p-7 border border-[#ebe5d8] shadow-[0_2px_12px_rgba(0,0,0,0.02)] flex flex-col justify-between overflow-hidden min-h-[290px] group"
+              onClick={() => {
+                const p = projects.find(it => it.id === 'flowcrm') || projects[3];
+                if (onSelectProject && p) onSelectProject(p);
+              }}
+              className="relative cursor-pointer bg-[#fcfaf6] rounded-[26px] p-5 sm:p-6 border border-[#ebe5d8] shadow-[0_2px_12px_rgba(0,0,0,0.02)] flex flex-col justify-between overflow-hidden min-h-[290px] group"
             >
               <CornerPins />
 
-              {/* Growth Curve Chart with Glowing Orange Node and Textured Lines */}
-              <div className="relative w-full h-36 flex items-center justify-center overflow-hidden">
-                {/* Subtle diagonal background hatch lines */}
-                <div className="absolute inset-0 opacity-25 bg-[radial-gradient(#d5cdc0_1px,transparent_1px)] [background-size:12px_12px]" />
-
-                {/* SVG Curve Line Graph */}
-                <svg className="w-full h-full overflow-visible" viewBox="0 0 240 120" fill="none">
-                  {/* Background filled area under curve */}
-                  <path
-                    d="M 10 100 C 60 100, 90 85, 130 55 C 160 30, 200 15, 230 10 L 230 120 L 10 120 Z"
-                    fill="url(#curveGlow)"
-                    opacity="0.15"
-                  />
-                  <defs>
-                    <linearGradient id="curveGlow" x1="0%" y1="0%" x2="0%" y2="100%">
-                      <stop offset="0%" stopColor="#ff5e28" />
-                      <stop offset="100%" stopColor="#ffffff" />
-                    </linearGradient>
-                  </defs>
-
-                  {/* Smooth curved trend line */}
-                  <motion.path
-                    d="M 10 100 C 60 100, 90 85, 130 55 C 160 30, 200 15, 230 10"
-                    stroke="#e28c68"
-                    strokeWidth="2.5"
-                    strokeLinecap="round"
-                  />
-
-                  {/* Orange Node at the inflection point */}
-                  <circle cx="130" cy="55" r="5" fill="#ff5e28" />
-                  <circle cx="130" cy="55" r="10" fill="#ff5e28" opacity="0.25" className="animate-ping" />
-                </svg>
+              {/* Uploaded FlowCRM Dashboard Image Preview */}
+              <div className="relative w-full h-44 sm:h-48 rounded-2xl overflow-hidden bg-slate-100 border border-slate-200/80 shadow-xs mb-3">
+                <img
+                  src="/projects/flowcrm.png"
+                  alt="FlowCRM - B2B SaaS Dashboard"
+                  className="w-full h-full object-cover object-top group-hover:scale-104 transition-transform duration-500 ease-out"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                <div className="absolute top-2.5 right-2.5 w-7 h-7 rounded-full bg-white/95 backdrop-blur-xs flex items-center justify-center shadow-xs opacity-0 group-hover:opacity-100 transition-opacity">
+                  <ArrowUpRight size={14} className="text-slate-900" />
+                </div>
               </div>
 
               {/* Text Info */}
-              <div className="mt-4 pt-2">
+              <div>
                 <div className="flex items-center justify-between mb-1">
                   <h3 className="font-display font-bold text-slate-900 text-lg sm:text-xl group-hover:text-orange-600 transition-colors">
-                    Impressions & Growth
+                    FlowCRM
                   </h3>
-                  <ArrowUpRight size={16} className="text-slate-400 group-hover:text-orange-600 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
+                  <span className="text-[10px] font-mono text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200/60 font-semibold">
+                    SaaS & Dashboard
+                  </span>
                 </div>
-                <p className="text-slate-500 text-xs sm:text-[13px] leading-relaxed">
-                  Seamless connection between popular apps that you like
+                <p className="text-slate-500 text-xs leading-relaxed">
+                  B2B SaaS sales pipeline & analytics dashboard redesign (+35% task speed).
                 </p>
               </div>
             </motion.div>
