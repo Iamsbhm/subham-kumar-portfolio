@@ -202,13 +202,14 @@ export default function HireMeSection({ onOpenResume }) {
 
             {/* Bottom Actions & Resume */}
             <div className="pt-5 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-3">
-              <button
-                onClick={() => onOpenResume && onOpenResume()}
+              <a
+                href="/Subham-Kumar-Resume.pdf"
+                download="Subham-Kumar-Resume.pdf"
                 className="w-full sm:w-auto flex-1 py-2.5 px-4 rounded-xl bg-slate-950 text-white hover:bg-slate-800 text-xs font-semibold transition-colors flex items-center justify-center gap-2 shadow-xs"
               >
-                <FileText size={14} />
-                <span>View Full Resume (CV)</span>
-              </button>
+                <Download size={14} />
+                <span>Download Full Resume (PDF)</span>
+              </a>
 
               <a
                 href={personal.socialLinks.linkedin}

@@ -144,13 +144,14 @@ export default function ExperienceSection({ onOpenResume }) {
                   </div>
                 </div>
 
-                <button 
-                  onClick={() => onOpenResume && onOpenResume()}
+                <a 
+                  href="/Subham-Kumar-Resume.pdf"
+                  download="Subham-Kumar-Resume.pdf"
                   className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-slate-50 hover:bg-slate-100 text-slate-700 text-xs font-semibold border border-slate-200/80 transition-colors"
                 >
-                  <span>View CV</span>
+                  <span>Download CV</span>
                   <ArrowUpRight size={13} />
-                </button>
+                </a>
               </div>
             </div>
           </motion.div>
@@ -319,12 +320,14 @@ export default function ExperienceSection({ onOpenResume }) {
             </div>
 
             {/* Quick Action Button */}
-            <button
-              onClick={() => onOpenResume && onOpenResume()}
-              className="w-full py-2.5 px-4 rounded-xl bg-slate-900 text-white text-xs font-semibold hover:bg-slate-800 transition-colors text-center shadow-xs"
+            <a
+              href="/Subham-Kumar-Resume.pdf"
+              download="Subham-Kumar-Resume.pdf"
+              className="w-full py-2.5 px-4 rounded-xl bg-slate-900 text-white text-xs font-semibold hover:bg-slate-800 transition-colors text-center shadow-xs flex items-center justify-center gap-1.5"
             >
-              Explore Full Resume
-            </button>
+              <span>Download Full Resume (PDF)</span>
+              <ArrowUpRight size={13} />
+            </a>
           </motion.div>
 
           {/* Card 3: Velocity & Carousel Controls (4 Cols) */}

@@ -42,12 +42,13 @@ export default function Header({ onOpenResume }) {
               {link.name}
             </a>
           ))}
-          <button
-            onClick={onOpenResume}
-            className="px-1.5 sm:px-2 py-1 text-[11px] sm:text-sm font-medium text-slate-600 hover:text-slate-950 transition-colors active:text-slate-950"
+          <a
+            href="/Subham-Kumar-Resume.pdf"
+            download="Subham-Kumar-Resume.pdf"
+            className="px-1.5 sm:px-2 py-1 text-[11px] sm:text-sm font-medium text-slate-600 hover:text-slate-950 transition-colors active:text-slate-950 cursor-pointer"
           >
             CV
-          </button>
+          </a>
         </div>
 
         {/* Right Contact Pill Button */}

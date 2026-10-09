@@ -135,13 +135,14 @@ export default function AboutSection({ onOpenResume }) {
 
             {/* Action Buttons & Links */}
             <div className="flex flex-wrap items-center gap-3 pt-2">
-              <button
-                onClick={() => onOpenResume && onOpenResume()}
+              <a
+                href="/Subham-Kumar-Resume.pdf"
+                download="Subham-Kumar-Resume.pdf"
                 className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-950 text-white hover:bg-slate-800 text-xs font-semibold transition-all shadow-xs"
               >
-                <span>View Full Curriculum Vitae</span>
-                <ArrowUpRight size={13} />
-              </button>
+                <Download size={13} />
+                <span>Download Resume (PDF)</span>
+              </a>
 
               <a
                 href={`mailto:${personal.email}?subject=Product%20Design%20Inquiry`}

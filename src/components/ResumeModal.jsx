@@ -27,13 +27,20 @@ export default function ResumeModal({ isOpen, onClose }) {
           </span>
 
           <div className="flex items-center gap-2 shrink-0">
+            <a
+              href="/Subham-Kumar-Resume.pdf"
+              download="Subham-Kumar-Resume.pdf"
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-500 text-white text-xs font-semibold transition-colors"
+            >
+              <Download size={13} />
+              <span>Download PDF</span>
+            </a>
             <button
               onClick={handlePrint}
-              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs font-semibold transition-colors"
+              className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs font-semibold transition-colors"
             >
               <Printer size={13} />
-              <span className="hidden sm:inline">Print / Save PDF</span>
-              <span className="sm:hidden">Save</span>
+              <span>Print</span>
             </button>
             <button
               onClick={onClose}
