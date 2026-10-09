@@ -15,9 +15,9 @@ export const portfolioData = {
     },
     socialLinks: {
       linkedin: "https://linkedin.com/in/subhamkumar",
-      dribbble: "https://dribbble.com/subhamkumar",
-      github: "https://github.com/subhamkumar",
-      portfolio: "#"
+      dribbble: "https://dribbble.com/iamsbhm",
+      github: "https://github.com/Iamsbhm",
+      portfolio: "https://subham-portfolio-nu.vercel.app"
     }
   },
 
