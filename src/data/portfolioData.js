@@ -211,52 +211,52 @@ export const portfolioData = {
       learnings: "Designing for financial stress requires extreme visual discipline: eliminating decorative noise and prioritizing instant feedback loops."
     },
     {
-      id: "aetheric-aviation",
-      title: "Aetheric Aviation",
-      subtitle: "Commercial Flight Booking & Reservation Experience",
-      category: "Web & Travel",
-      tagline: "Streamlined 9 convoluted booking screens down to 4 seamless steps, cutting completion time by 35%.",
-      summary: "End-to-end task analysis and architectural overhaul of an international airline booking portal, elevating accessibility evaluation scores by 60% with validated user research.",
-      coverImage: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?q=80&w=1600&auto=format&fit=crop",
+      id: "swiftsbf-design-system",
+      title: "SwiftSBF Design System",
+      subtitle: "Multi-Brand Atomic Component Library & Tokenized System",
+      category: "Design Systems",
+      tagline: "Architected 60+ atomic Figma components and variables, reducing engineering handoff time by 30%.",
+      summary: "End-to-end design system overhaul for SwiftSBF, aligning Figma Auto Layout 5.0 tokens directly with front-end React & CSS codebases.",
+      coverImage: "/projects/swiftsbf-design-system.jpg",
       stats: [
-        { label: "Steps Condensed", value: "9 → 4" },
-        { label: "Completion Time", value: "-35%" },
-        { label: "Accessibility Score", value: "+60%" },
-        { label: "Validation Rounds", value: "2 Rounds" }
+        { label: "Atomic Components", value: "60+" },
+        { label: "Handoff Time", value: "-30%" },
+        { label: "Token Sets", value: "100%" },
+        { label: "Accessibility", value: "WCAG 2.1" }
       ],
       metadata: {
-        role: "UX Researcher & Product Designer",
-        duration: "2.5 Months",
-        team: "Product Designer • Business Analyst • Tech Lead",
-        platform: "Responsive Web (Desktop & Mobile)",
-        tools: ["Figma", "FigJam", "Miro Task Mapping", "Lighthouse Accessibility"]
+        role: "Lead Design System Architect",
+        duration: "Ongoing",
+        team: "Product Designer • Lead Frontend • QA",
+        platform: "Multi-Platform System",
+        tools: ["Figma Auto Layout 5.0", "Token Studio", "Variables", "Storybook"]
       },
       challenge: {
-        heading: "Convoluted 9-Step Funnel & High Abandonment",
-        description: "The legacy booking portal overwhelmed travelers with hidden add-on fees, multi-screen baggage upsells, and confusing seat-selection matrices. Drop-off during checkout exceeded 54%."
+        heading: "Fragmented UI Patterns & Slow Developer Velocity",
+        description: "Multiple engineering teams were building redundant UI components with inconsistent padding, states, and non-accessible color contrasts."
       },
       research: {
-        heading: "Task Analysis & 2-Round Usability Validation",
+        heading: "Component Audit & UI State Matrix",
         bullets: [
-          "Deconstructed the 9-screen journey identifying 11 friction points where travelers stalled.",
-          "Conducted usability testing with 10+ participants across two rigorous rounds.",
-          "Discovered that 80% of users wanted transparent fare breakdown upfront."
+          "Audited 120+ legacy UI screens to catalog inconsistent buttons, inputs, and modals.",
+          "Interviewed 8 front-end developers to identify common sprint handoff bottlenecks.",
+          "Structured a unified design token schema covering color, typography, radius, and elevation."
         ]
       },
       solution: {
-        heading: "Unified 4-Stage Progressive Disclosure Flow",
+        heading: "Tokenized Component Architecture & Auto Layout 5.0",
         bullets: [
-          "Collapsed the flow into 4 distinct phases: Search → Passenger & Seat → Ancillaries → One-Click Payment.",
-          "Designed an interactive SVG seat-map with clear legroom and accessibility indicators.",
-          "Implemented full WCAG 2.1 AA keyboard navigation."
+          "Built 60+ robust atomic components with comprehensive variant states (Default, Hover, Active, Disabled).",
+          "Implemented semantic color tokens guaranteeing WCAG 2.1 AA contrast compliance.",
+          "Published interactive Figma library with clear developer documentation."
         ]
       },
       outcomes: [
-        "Cut average task completion time by 35% (from 4m 15s to 2m 45s).",
-        "Improved accessibility evaluation rating from 38/100 to 98/100 (+60%).",
-        "Ancillary bundle conversion increased by 22%."
+        "Reduced front-end sprint handoff friction and revision cycles by 30%.",
+        "Achieved 100% token consistency across all active fintech product features.",
+        "Created an evergreen design system scaling effortlessly across new product modules."
       ],
-      learnings: "Simplifying a flow doesn't mean removing features—it means orchestrating progressive disclosure so users only see choices when they need them."
+      learnings: "A design system is a living product. Success is defined by developer adoption and maintenance velocity."
     },
     {
       id: "medi-care",
@@ -409,7 +409,7 @@ export const portfolioData = {
       category: "E-Commerce",
       tagline: "Re-engineered navigation and catalog taxonomy, boosting product discovery by 38%.",
       summary: "Comprehensive website redesign using human-centered design thinking, responsive editorial grids, and visual hierarchy.",
-      coverImage: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=1600&auto=format&fit=crop",
+      coverImage: "/projects/stylecart.jpg",
       stats: [
         { label: "Product Discovery", value: "+38%" },
         { label: "Mobile Bounce Rate", value: "-24%" },
