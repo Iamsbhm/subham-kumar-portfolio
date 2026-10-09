@@ -37,7 +37,7 @@ export default function HeroScrollExperience({ onSelectProject }) {
       x: -310,
       y: 28,
       zIndex: 10,
-      targetProject: projects[5],
+      targetProject: projects?.find(p => p.id === 'stylecart') || projects?.[0] || {},
       items: ["Hackathon Finalist", "10,000+ Participants", "Innovation Award"],
     },
     {
@@ -52,7 +52,7 @@ export default function HeroScrollExperience({ onSelectProject }) {
       x: -160,
       y: 12,
       zIndex: 20,
-      targetProject: projects[4],
+      targetProject: projects?.find(p => p.id === 'quickbite') || projects?.[0] || {},
       items: ["StyleCart Redesign", "QuickBite Mobile", "Information Arch."],
     },
     {
@@ -68,7 +68,7 @@ export default function HeroScrollExperience({ onSelectProject }) {
       y: -8,
       zIndex: 50,
       isCenter: true,
-      targetProject: projects[0],
+      targetProject: projects?.find(p => p.id === 'alphatrade-pro') || projects?.[0] || {},
       items: ["AlphaTrade Pro UI", "60+ Figma Tokens", "30% Faster Handoff"],
     },
     {
@@ -83,7 +83,7 @@ export default function HeroScrollExperience({ onSelectProject }) {
       x: 170,
       y: 14,
       zIndex: 30,
-      targetProject: projects[2],
+      targetProject: projects?.find(p => p.id === 'medi-care') || projects?.[0] || {},
       items: ["Medi Care App (WCAG)", "FlowCRM Pipelines", "B.Tech Computer Sci."],
     },
     {
@@ -98,7 +98,7 @@ export default function HeroScrollExperience({ onSelectProject }) {
       x: 320,
       y: 32,
       zIndex: 15,
-      targetProject: projects[1],
+      targetProject: projects?.find(p => p.id === 'swiftsbf-design-system') || projects?.[0] || {},
       items: ["Auto Layout 5.0", "Semantic Variables", "Storybook Ready"],
     },
   ];
@@ -229,7 +229,7 @@ export default function HeroScrollExperience({ onSelectProject }) {
                       {/* Bottom Project Name */}
                       <div className="text-left pt-2 border-t border-white/20">
                         <span className={`text-[11px] font-bold block truncate ${folder.textColor}`}>
-                          {folder.targetProject.title}
+                          {folder.targetProject?.title || folder.title}
                         </span>
                       </div>
                     </div>
