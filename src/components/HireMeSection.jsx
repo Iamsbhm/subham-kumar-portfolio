@@ -15,7 +15,8 @@ import {
   CheckCircle2, 
   Linkedin, 
   Github, 
-  MessageSquare
+  MessageSquare,
+  Download
 } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import { portfolioData } from '../data/portfolioData';

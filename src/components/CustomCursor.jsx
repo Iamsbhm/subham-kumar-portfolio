@@ -7,18 +7,27 @@ export default function CustomCursor() {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    // Disable on touch devices
-    if ('ontouchstart' in window || navigator.maxTouchPoints > 0) {
+    if (typeof window === 'undefined') return;
+    // Disable on touch-only devices
+    if ('ontouchstart' in window && !window.matchMedia('(pointer:fine)').matches) {
       return;
     }
 
     const onMouseMove = (e) => {
-      setMousePosition({ x: e.clientX, y: e.clientY });
-      if (!isVisible) setIsVisible(true);
+      try {
+        setMousePosition({ x: e.clientX, y: e.clientY });
+        setIsVisible(true);
 
-      const target = e.target;
-      const isInteractive = target.closest('button, a, input, textarea, [role="button"], .cursor-pointer');
-      setIsHovered(!!isInteractive);
+        const target = e.target;
+        if (target && typeof target.closest === 'function') {
+          const isInteractive = target.closest('button, a, input, textarea, [role="button"], .cursor-pointer');
+          setIsHovered(!!isInteractive);
+        } else {
+          setIsHovered(false);
+        }
+      } catch {
+        // fail gracefully
+      }
     };
 
     const onMouseLeave = () => setIsVisible(false);
@@ -33,7 +42,7 @@ export default function CustomCursor() {
       document.removeEventListener('mouseleave', onMouseLeave);
       document.removeEventListener('mouseenter', onMouseEnter);
     };
-  }, [isVisible]);
+  }, []);
 
   if (!isVisible) return null;
 

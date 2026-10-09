@@ -11,13 +11,15 @@ import FloatingContactWidget from './components/FloatingContactWidget';
 import CaseStudyModal from './components/CaseStudyModal';
 import ResumeModal from './components/ResumeModal';
 import CustomCursor from './components/CustomCursor';
+import ErrorBoundary from './components/ErrorBoundary';
 
 export default function App() {
   const [selectedProject, setSelectedProject] = useState(null);
   const [resumeOpen, setResumeOpen] = useState(false);
 
   return (
-    <div className="relative min-h-screen bg-white text-slate-900 font-sans selection:bg-slate-950 selection:text-white">
+    <ErrorBoundary>
+      <div className="relative min-h-screen bg-white text-slate-900 font-sans selection:bg-slate-950 selection:text-white">
       {/* Desktop Custom Cursor */}
       <CustomCursor />
 
@@ -64,5 +66,6 @@ export default function App() {
         onClose={() => setResumeOpen(false)}
       />
     </div>
+    </ErrorBoundary>
   );
 }
