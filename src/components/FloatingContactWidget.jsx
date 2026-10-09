@@ -20,12 +20,12 @@ export default function FloatingContactWidget() {
   };
 
   return (
-    <div className="fixed bottom-6 right-6 z-40 pointer-events-none">
+    <div className="fixed bottom-3 right-3 sm:bottom-6 sm:right-6 z-40 pointer-events-none">
       <motion.div
         initial={{ y: 30, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, delay: 0.3 }}
-        className="pointer-events-auto flex items-center gap-3.5 px-4 py-2 rounded-full floating-glass shadow-xl"
+        className="pointer-events-auto flex items-center gap-2.5 sm:gap-3.5 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full floating-glass shadow-xl"
       >
         <div className="flex flex-col text-left pr-1">
           <span className="text-xs font-bold text-slate-900 leading-tight">

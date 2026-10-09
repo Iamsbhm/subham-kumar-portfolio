@@ -155,9 +155,12 @@ export default function ExperienceSection({ onOpenResume }) {
             </div>
           </motion.div>
 
-          {/* Right Category Pill List Card (Top Right - 3 Cols) */}
-          <div className="lg:col-span-3 bg-white rounded-[28px] p-5 shadow-[0_10px_35px_rgba(0,0,0,0.03)] border border-[#ebe5d8] flex flex-col justify-between">
-            <div className="space-y-2">
+          {/* Category Filter Pills (Horizontal on Mobile, Column on Desktop) */}
+          <div className="lg:col-span-3 bg-white rounded-[24px] sm:rounded-[28px] p-3 sm:p-5 shadow-[0_10px_35px_rgba(0,0,0,0.03)] border border-[#ebe5d8] flex flex-col justify-center">
+            <span className="text-[10px] font-mono uppercase tracking-wider text-slate-400 font-bold block mb-2 px-1">
+              Filter Experience
+            </span>
+            <div className="flex lg:flex-col gap-2 overflow-x-auto no-scrollbar py-1">
               {categories.map((cat) => {
                 const Icon = cat.icon;
                 const isSelected = activeCategory === cat.id;
@@ -165,18 +168,18 @@ export default function ExperienceSection({ onOpenResume }) {
                   <button
                     key={cat.id}
                     onClick={() => setActiveCategory(cat.id)}
-                    className={`w-full flex items-center gap-3 px-3.5 py-2.5 rounded-2xl text-xs font-semibold transition-all ${
+                    className={`shrink-0 lg:w-full flex items-center gap-2 sm:gap-3 px-3 sm:px-3.5 py-2 sm:py-2.5 rounded-xl sm:rounded-2xl text-xs font-semibold transition-all ${
                       isSelected
                         ? 'bg-blue-600 text-white shadow-md shadow-blue-500/25'
-                        : 'text-slate-600 hover:bg-slate-50 hover:text-slate-900'
+                        : 'text-slate-600 hover:bg-slate-50 hover:text-slate-900 bg-slate-50 lg:bg-transparent'
                     }`}
                   >
-                    <div className={`w-6 h-6 rounded-lg flex items-center justify-center transition-colors ${
-                      isSelected ? 'bg-white/20 text-white' : 'bg-slate-100 text-slate-500'
+                    <div className={`w-5 h-5 sm:w-6 sm:h-6 rounded-lg flex items-center justify-center transition-colors ${
+                      isSelected ? 'bg-white/20 text-white' : 'bg-white lg:bg-slate-100 text-slate-500'
                     }`}>
-                      <Icon size={14} />
+                      <Icon size={13} />
                     </div>
-                    <span className="truncate">{cat.name}</span>
+                    <span className="whitespace-nowrap">{cat.name}</span>
                   </button>
                 );
               })}

@@ -103,36 +103,38 @@ export default function HeroScrollExperience({ onSelectProject }) {
     },
   ];
 
+  const [activeMobileIndex, setActiveMobileIndex] = useState(2); // Default to center (2025 - SwiftSBF)
+
   return (
     <div ref={sectionRef} className="relative">
       {/* CENTERED HERO SECTION WITH 3D FOLDERS DECK */}
-      <section className="relative pt-20 sm:pt-24 pb-4 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto overflow-hidden text-center">
+      <section className="relative pt-20 sm:pt-28 pb-6 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto overflow-hidden text-center">
         <motion.div
           style={{ scale: heroScale, opacity: heroOpacity }}
           className="flex flex-col items-center"
         >
-          {/* Centered Single-Line Headline */}
-          <h1 className="font-display font-bold text-3xl sm:text-5xl lg:text-6xl tracking-tight text-slate-950 leading-tight max-w-5xl mb-3">
+          {/* Centered Headline */}
+          <h1 className="font-display font-bold text-3xl sm:text-5xl lg:text-6xl tracking-tight text-slate-950 leading-[1.12] max-w-5xl mb-3">
             Designing the future with clarity, craft and strategy
           </h1>
 
           {/* Centered Subtitle */}
-          <p className="text-sm sm:text-base text-slate-600 font-normal leading-relaxed max-w-2xl mb-6">
+          <p className="text-xs sm:text-base text-slate-600 font-normal leading-relaxed max-w-2xl mb-6 sm:mb-8 px-2">
             Turning complex FinTech, SaaS & mobile workflows into intuitive, high-converting digital products through human-centered UX and scalable design systems.
           </p>
 
           {/* Centered Action Buttons */}
-          <div className="flex items-center justify-center gap-3 sm:gap-4 mb-8">
+          <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 mb-8 sm:mb-10 w-full sm:w-auto">
             <a
               href="#work"
-              className="px-5 py-2.5 rounded-full border border-slate-300 hover:border-slate-900 bg-white text-slate-900 text-xs sm:text-sm font-semibold tracking-wider uppercase transition-all shadow-2xs hover:scale-[1.02] active:scale-[0.98]"
+              className="w-full sm:w-auto px-6 py-2.5 rounded-full border border-slate-300 hover:border-slate-900 bg-white text-slate-900 text-xs sm:text-sm font-semibold tracking-wider uppercase transition-all shadow-2xs hover:scale-[1.02] active:scale-[0.98]"
             >
               View Work
             </a>
 
             <a
               href={`mailto:${personal.email}?subject=Product%20Design%20Inquiry`}
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-slate-950 hover:bg-slate-800 text-white text-xs sm:text-sm font-semibold tracking-wider uppercase transition-all shadow-lg hover:scale-[1.02] active:scale-[0.98] group"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-full bg-slate-950 hover:bg-slate-800 text-white text-xs sm:text-sm font-semibold tracking-wider uppercase transition-all shadow-lg hover:scale-[1.02] active:scale-[0.98] group"
             >
               <span>Get in touch</span>
               <div className="w-4 h-4 rounded-full bg-white/20 flex items-center justify-center group-hover:rotate-45 transition-transform">
@@ -141,8 +143,10 @@ export default function HeroScrollExperience({ onSelectProject }) {
             </a>
           </div>
 
-          {/* 3D FOLDERS DECK SHOWCASE (Matching reference image) */}
-          <div className="relative w-full max-w-5xl h-[260px] sm:h-[310px] flex items-end justify-center select-none overflow-visible pt-8">
+          {/* ========================================================= */}
+          {/* DESKTOP 3D FOLDERS DECK (hidden on mobile, visible on md+)  */}
+          {/* ========================================================= */}
+          <div className="hidden md:flex relative w-full max-w-5xl h-[310px] items-end justify-center select-none overflow-visible pt-8">
             <div className="relative w-full h-full flex items-end justify-center">
               {folders.map((folder) => {
                 const isHovered = hoveredFolder === folder.id;
@@ -150,7 +154,7 @@ export default function HeroScrollExperience({ onSelectProject }) {
                 return (
                   <motion.div
                     key={folder.id}
-                    className="absolute w-[200px] sm:w-[260px] h-[190px] sm:h-[230px] cursor-pointer group"
+                    className="absolute w-[260px] h-[230px] cursor-pointer group"
                     style={{ zIndex: isHovered ? 60 : folder.zIndex }}
                     initial={{
                       x: folder.x,
@@ -194,7 +198,7 @@ export default function HeroScrollExperience({ onSelectProject }) {
                     </motion.div>
 
                     {/* Main 3D Folder Body with Tab Notch */}
-                    <div className={`relative w-full h-full rounded-2xl sm:rounded-3xl bg-gradient-to-br ${folder.color} p-4 sm:p-5 shadow-2xl flex flex-col justify-between border-t border-white/40 overflow-hidden`}>
+                    <div className={`relative w-full h-full rounded-3xl bg-gradient-to-br ${folder.color} p-5 shadow-2xl flex flex-col justify-between border-t border-white/40 overflow-hidden`}>
                       {/* Top Left Folder Tab Notch */}
                       <div className={`absolute -top-0.5 left-4 px-3 py-1 rounded-t-lg ${folder.tabColor} border-t border-white/40 shadow-xs`}>
                         <span className={`text-[10px] font-mono font-bold ${folder.textColor} opacity-90`}>
@@ -215,9 +219,9 @@ export default function HeroScrollExperience({ onSelectProject }) {
                         </div>
                       </div>
 
-                      {/* Giant Embossed Year Text on Folder Cover (Matching Screenshot) */}
+                      {/* Giant Embossed Year Text on Folder Cover */}
                       <div className="text-center my-auto">
-                        <span className={`font-display font-extrabold text-4xl sm:text-5xl tracking-tight ${folder.textColor} opacity-90 drop-shadow-xs`}>
+                        <span className={`font-display font-extrabold text-5xl tracking-tight ${folder.textColor} opacity-90 drop-shadow-xs`}>
                           {folder.year}
                         </span>
                       </div>
@@ -235,8 +239,98 @@ export default function HeroScrollExperience({ onSelectProject }) {
             </div>
           </div>
 
-          {/* Bottom Shelf Horizon Line (Matching Screenshot) */}
-          <div className="w-full max-w-5xl h-[2px] bg-slate-200/90 rounded-full mt-2" />
+          {/* ========================================================= */}
+          {/* MOBILE INTERACTIVE DOSSIER CAROUSEL (visible only < md)    */}
+          {/* ========================================================= */}
+          <div className="md:hidden w-full max-w-sm mx-auto pt-4 pb-2">
+            {/* Folder Year Tabs Indicator */}
+            <div className="flex items-center justify-center gap-1.5 mb-4 overflow-x-auto no-scrollbar py-1">
+              {folders.map((f, i) => (
+                <button
+                  key={f.id}
+                  onClick={() => setActiveMobileIndex(i)}
+                  className={`px-2.5 py-1 rounded-full text-[11px] font-mono font-semibold transition-all ${
+                    activeMobileIndex === i
+                      ? 'bg-slate-900 text-white shadow-xs'
+                      : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
+                  }`}
+                >
+                  {f.year}
+                </button>
+              ))}
+            </div>
+
+            {/* Mobile Active Dossier Card */}
+            {(() => {
+              const activeFolder = folders[activeMobileIndex];
+              return (
+                <motion.div
+                  key={activeFolder.id}
+                  initial={{ opacity: 0, scale: 0.95, y: 10 }}
+                  animate={{ opacity: 1, scale: 1, y: 0 }}
+                  transition={{ duration: 0.25 }}
+                  onClick={() => onSelectProject(activeFolder.targetProject)}
+                  className="relative cursor-pointer bg-white rounded-3xl p-4 border border-slate-200 shadow-xl text-left"
+                >
+                  {/* Top Header */}
+                  <div className="flex items-center justify-between mb-3">
+                    <span className={`text-[10px] font-mono uppercase font-bold px-2.5 py-0.5 rounded-full bg-slate-100 text-slate-800 border border-slate-200`}>
+                      {activeFolder.category}
+                    </span>
+                    <span className="text-xs font-mono font-bold text-slate-400">
+                      {activeFolder.year}
+                    </span>
+                  </div>
+
+                  {/* Visual Dossier Banner */}
+                  <div className={`w-full h-24 rounded-2xl bg-gradient-to-r ${activeFolder.color} p-4 flex items-center justify-between text-white mb-3 shadow-md`}>
+                    <div>
+                      <span className="text-[10px] font-mono opacity-80 block">Case Study Deck</span>
+                      <h4 className="font-display font-bold text-lg text-white">
+                        {activeFolder.title}
+                      </h4>
+                    </div>
+                    <div className="w-8 h-8 rounded-full bg-white/25 backdrop-blur-xs flex items-center justify-center">
+                      <ArrowUpRight size={16} className="text-white" />
+                    </div>
+                  </div>
+
+                  {/* Bullet Highlights */}
+                  <div className="space-y-1.5 mb-3 bg-slate-50 p-3 rounded-xl border border-slate-100">
+                    {activeFolder.items.map((it, i) => (
+                      <div key={i} className="flex items-center gap-2 text-xs text-slate-700 font-medium">
+                        <span className="w-1.5 h-1.5 rounded-full bg-slate-400 shrink-0"></span>
+                        <span className="truncate">{it}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Action Link */}
+                  <div className="flex items-center justify-between text-xs font-bold text-slate-900 pt-1 border-t border-slate-100">
+                    <span>Explore Case Study</span>
+                    <span className="text-[11px] font-mono text-orange-600">Tap to open →</span>
+                  </div>
+                </motion.div>
+              );
+            })()}
+
+            {/* Pagination Dots */}
+            <div className="flex items-center justify-center gap-1.5 mt-3">
+              {folders.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => setActiveMobileIndex(i)}
+                  className={`h-1.5 rounded-full transition-all ${
+                    activeMobileIndex === i ? 'w-5 bg-slate-900' : 'w-1.5 bg-slate-300'
+                  }`}
+                  aria-label={`Slide ${i + 1}`}
+                />
+              ))}
+            </div>
+          </div>
+
+          {/* Bottom Shelf Horizon Line */}
+          <div className="w-full max-w-5xl h-[2px] bg-slate-200/90 rounded-full mt-4 sm:mt-2" />
         </motion.div>
       </section>
 

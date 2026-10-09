@@ -13,26 +13,27 @@ export default function ResumeModal({ isOpen, onClose }) {
   };
 
   return (
-    <div className="fixed inset-0 z-50 overflow-y-auto bg-slate-950/80 backdrop-blur-md flex items-center justify-center p-2 sm:p-4">
+    <div className="fixed inset-0 z-50 overflow-y-auto bg-slate-950/80 backdrop-blur-md flex items-end sm:items-center justify-center p-0 sm:p-4">
       <motion.div
-        initial={{ opacity: 0, scale: 0.96 }}
-        animate={{ opacity: 1, scale: 1 }}
-        exit={{ opacity: 0, scale: 0.96 }}
-        className="relative w-full max-w-4xl bg-white text-slate-900 rounded-3xl shadow-2xl overflow-hidden my-6 border border-slate-200"
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: 40 }}
+        className="relative w-full max-w-4xl bg-white text-slate-900 rounded-t-[32px] sm:rounded-3xl shadow-2xl overflow-hidden sm:my-6 border border-slate-200 flex flex-col max-h-[92vh] sm:max-h-[85vh]"
       >
         {/* Top Action Bar */}
-        <div className="flex items-center justify-between px-6 py-4 bg-slate-900 text-white border-b border-slate-800">
-          <span className="font-display font-bold text-sm tracking-wide">
-            Subham Kumar — Curriculum Vitae
+        <div className="flex items-center justify-between px-4 sm:px-6 py-3.5 sm:py-4 bg-slate-900 text-white border-b border-slate-800 shrink-0">
+          <span className="font-display font-bold text-xs sm:text-sm tracking-wide truncate pr-2">
+            Subham Kumar — CV
           </span>
 
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 shrink-0">
             <button
               onClick={handlePrint}
               className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs font-semibold transition-colors"
             >
-              <Printer size={14} />
-              <span>Print / Save PDF</span>
+              <Printer size={13} />
+              <span className="hidden sm:inline">Print / Save PDF</span>
+              <span className="sm:hidden">Save</span>
             </button>
             <button
               onClick={onClose}
@@ -44,13 +45,13 @@ export default function ResumeModal({ isOpen, onClose }) {
         </div>
 
         {/* Resume Content Body */}
-        <div className="p-6 sm:p-10 space-y-8 font-sans max-h-[80vh] overflow-y-auto">
+        <div className="p-4 sm:p-10 space-y-6 sm:space-y-8 font-sans overflow-y-auto flex-1">
           {/* Header */}
-          <div className="border-b border-slate-200 pb-6">
-            <h1 className="font-display font-extrabold text-3xl sm:text-4xl text-slate-900 uppercase tracking-tight">
+          <div className="border-b border-slate-200 pb-4 sm:pb-6">
+            <h1 className="font-display font-extrabold text-2xl sm:text-4xl text-slate-900 uppercase tracking-tight">
               {personal.name}
             </h1>
-            <div className="flex flex-wrap items-center gap-4 text-xs text-slate-600 mt-2 font-medium">
+            <div className="flex flex-wrap items-center gap-2 sm:gap-4 text-xs text-slate-600 mt-2 font-medium">
               <span className="flex items-center gap-1"><Phone size={13} /> {personal.phone}</span>
               <span className="flex items-center gap-1"><MapPin size={13} /> {personal.location}</span>
               <span className="flex items-center gap-1"><Mail size={13} /> {personal.email}</span>

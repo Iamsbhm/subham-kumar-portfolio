@@ -45,37 +45,37 @@ export default function CaseStudyModal({ project, onClose, onSelectProject }) {
 
   return (
     <AnimatePresence>
-      <div className="fixed inset-0 z-50 overflow-y-auto bg-black/40 backdrop-blur-md flex justify-center p-2 sm:p-6">
+      <div className="fixed inset-0 z-50 overflow-y-auto bg-black/60 backdrop-blur-md flex items-end sm:items-center justify-center p-0 sm:p-6">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: 30 }}
+          exit={{ opacity: 0, y: 40 }}
           transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-          className="relative w-full max-w-4xl my-auto bg-white text-slate-900 rounded-[32px] border border-slate-200/90 shadow-2xl overflow-hidden flex flex-col max-h-[90vh]"
+          className="relative w-full max-w-4xl bg-white text-slate-900 rounded-t-[32px] sm:rounded-[32px] border border-slate-200/90 shadow-2xl overflow-hidden flex flex-col max-h-[92vh] sm:max-h-[90vh]"
         >
           {/* Top Sticky Bar */}
-          <div className="sticky top-0 z-30 flex items-center justify-between px-6 py-4 bg-white/95 backdrop-blur-xl border-b border-slate-100">
-            <div className="flex items-center gap-3">
-              <span className="text-xs font-mono font-semibold uppercase tracking-wider text-slate-500 bg-slate-100 px-2.5 py-1 rounded-full">
+          <div className="sticky top-0 z-30 flex items-center justify-between px-4 sm:px-6 py-3.5 sm:py-4 bg-white/95 backdrop-blur-xl border-b border-slate-100">
+            <div className="flex items-center gap-2 sm:gap-3 min-w-0 pr-2">
+              <span className="text-[10px] sm:text-xs font-mono font-semibold uppercase tracking-wider text-slate-500 bg-slate-100 px-2.5 py-1 rounded-full shrink-0">
                 {project.category}
               </span>
-              <span className="font-display font-bold text-slate-950 text-base truncate max-w-[220px] sm:max-w-md">
+              <span className="font-display font-bold text-slate-950 text-sm sm:text-base truncate">
                 {project.title}
               </span>
             </div>
 
             <button
               onClick={onClose}
-              className="p-2 rounded-full bg-slate-100 text-slate-700 hover:bg-slate-200 transition-colors"
+              className="w-8 h-8 rounded-full bg-slate-100 text-slate-700 hover:bg-slate-200 flex items-center justify-center transition-colors shrink-0"
               aria-label="Close modal"
             >
-              <X size={18} />
+              <X size={16} />
             </button>
           </div>
 
           <div className="overflow-y-auto flex-1">
             {/* Hero Cover Image */}
-            <div className="relative aspect-[21/9] w-full overflow-hidden bg-slate-100 border-b border-slate-100">
+            <div className="relative aspect-[16/9] sm:aspect-[21/9] w-full overflow-hidden bg-slate-100 border-b border-slate-100">
               <img
                 src={project.coverImage}
                 alt={project.title}
@@ -84,22 +84,22 @@ export default function CaseStudyModal({ project, onClose, onSelectProject }) {
             </div>
 
             {/* Header Content */}
-            <div className="p-6 sm:p-10 pb-6">
-              <h1 className="font-display font-bold text-3xl sm:text-5xl text-slate-950 tracking-tight mb-2">
+            <div className="p-4 sm:p-10 pb-6">
+              <h1 className="font-display font-bold text-2xl sm:text-5xl text-slate-950 tracking-tight mb-2">
                 {project.title}
               </h1>
-              <p className="text-base text-slate-500 font-medium mb-6">
+              <p className="text-xs sm:text-base text-slate-500 font-medium mb-6">
                 {project.subtitle}
               </p>
 
               {/* Stats Row */}
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 p-6 rounded-2xl bg-[#fafafa] border border-slate-200/80 mb-8">
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 p-4 sm:p-6 rounded-2xl bg-[#fafafa] border border-slate-200/80 mb-6 sm:mb-8">
                 {project.stats.map((stat, i) => (
                   <div key={i} className="flex flex-col">
-                    <span className="font-display font-extrabold text-2xl text-slate-950">
+                    <span className="font-display font-extrabold text-xl sm:text-2xl text-slate-950">
                       {stat.value}
                     </span>
-                    <span className="text-xs text-slate-500 font-medium mt-0.5">
+                    <span className="text-[10px] sm:text-xs text-slate-500 font-medium mt-0.5">
                       {stat.label}
                     </span>
                   </div>
@@ -107,32 +107,32 @@ export default function CaseStudyModal({ project, onClose, onSelectProject }) {
               </div>
 
               {/* Metadata Grid */}
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 text-xs pb-8 border-b border-slate-200/80">
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 text-xs pb-6 sm:pb-8 border-b border-slate-200/80">
                 <div>
-                  <span className="text-slate-400 font-mono uppercase block mb-1">Role</span>
-                  <p className="font-bold text-slate-900">{project.metadata.role}</p>
+                  <span className="text-[10px] text-slate-400 font-mono uppercase block mb-0.5">Role</span>
+                  <p className="font-bold text-slate-900 text-[11px] sm:text-xs">{project.metadata.role}</p>
                 </div>
                 <div>
-                  <span className="text-slate-400 font-mono uppercase block mb-1">Timeline & Team</span>
-                  <p className="font-bold text-slate-900">{project.metadata.duration} • {project.metadata.team}</p>
+                  <span className="text-[10px] text-slate-400 font-mono uppercase block mb-0.5">Timeline & Team</span>
+                  <p className="font-bold text-slate-900 text-[11px] sm:text-xs">{project.metadata.duration} • {project.metadata.team}</p>
                 </div>
                 <div>
-                  <span className="text-slate-400 font-mono uppercase block mb-1">Platform</span>
-                  <p className="font-bold text-slate-900">{project.metadata.platform}</p>
+                  <span className="text-[10px] text-slate-400 font-mono uppercase block mb-0.5">Platform</span>
+                  <p className="font-bold text-slate-900 text-[11px] sm:text-xs">{project.metadata.platform}</p>
                 </div>
                 <div>
-                  <span className="text-slate-400 font-mono uppercase block mb-1">Tooling</span>
-                  <p className="font-bold text-slate-900">{project.metadata.tools.join(', ')}</p>
+                  <span className="text-[10px] text-slate-400 font-mono uppercase block mb-0.5">Tooling</span>
+                  <p className="font-bold text-slate-900 text-[11px] sm:text-xs">{project.metadata.tools.join(', ')}</p>
                 </div>
               </div>
 
               {/* Tabs Switcher */}
-              <div className="flex gap-2 pt-6 mb-8 overflow-x-auto no-scrollbar">
+              <div className="flex gap-2 pt-4 sm:pt-6 mb-6 sm:mb-8 overflow-x-auto no-scrollbar py-1">
                 {tabs.map((tab) => (
                   <button
                     key={tab.id}
                     onClick={() => setActiveTab(tab.id)}
-                    className={`px-4 py-2 rounded-full text-xs font-semibold whitespace-nowrap transition-all ${
+                    className={`px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs font-semibold whitespace-nowrap transition-all ${
                       activeTab === tab.id
                         ? 'bg-slate-950 text-white shadow-xs'
                         : 'bg-slate-100 text-slate-600 hover:bg-slate-200/70'
