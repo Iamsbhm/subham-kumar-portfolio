@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Header from './components/Header';
 import HeroScrollExperience from './components/HeroScrollExperience';
+import ProcessTimelineSection from './components/ProcessTimelineSection';
 import ExperienceSection from './components/ExperienceSection';
 import SkillsSection from './components/SkillsSection';
 import FeaturedCaseStudiesSection from './components/FeaturedCaseStudiesSection';
@@ -34,6 +35,8 @@ export default function App() {
           <HeroScrollExperience
             onSelectProject={(project) => setSelectedProject(project)}
           />
+
+          <ProcessTimelineSection />
 
           <ExperienceSection onOpenResume={() => setResumeOpen(true)} />
           <SkillsSection />
